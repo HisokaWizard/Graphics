@@ -1,0 +1,278 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Big form</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+</head>
+<body>
+    <div class="container form-elememt background-form">
+        <div class="row col-md-12 header-text-style">
+            Уточненные критерии выгрузки информации о пользователях
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-text-style">
+                <div class="col-md-4 margin-element">Идентификаторы:</div>
+                <div class="col-md-8 margin-element">
+                    <input type="text" class="input-text-style" data-bind="value: id" placeholder="Укажите идентификаторы пользователей">
+                </div>
+                <div class="col-md-4 margin-element">Ники пользователей:</div>
+                <div class="col-md-8 margin-element">
+                    <input type="text" class="input-text-style" data-bind="value: nickName" placeholder="Укажите ники пользователей">
+                </div>
+                <div class="col-md-4 margin-element">ФИО пользователей:</div>
+                <div class="col-md-8 margin-element">
+                    <input type="text" class="input-text-style" data-bind="value: fullName" placeholder="Укажите ФИО, ключевые слова">
+                </div>
+            </div>
+            <!-- ////////////////////////////////////////////////////////////////////////////  -->
+            <div class="col-md-12 form-text-style">
+                <div class="col-md-12 margin-element tilte-text-style">Географическое положение</div>
+                <div class="col-md-4 margin-element">Выберете страну:</div>
+                <div class="col-md-8 margin-element">
+                    <select class="input-text-style" 
+                            data-bind="options: countries,
+                                        optionsText: 'name',
+                                        value: countrySelectedGeoLocation,
+                                        optionsCaption: 'Не выбрано',
+                                        click: cityInitGeoLocation">
+                    </select>
+                </div>
+                <div class="col-md-4 margin-element">Выберете город:</div>
+                <div class="col-md-8 margin-element">
+                    <select class="input-text-style" 
+                            data-bind="options: cityInitGeoLocation(),
+                                        value: citySelectedGeoLocation,
+                                        optionsText: 'name', 
+                                        optionsCaption: 'Не выбрано'">
+                    </select>
+                </div>
+            </div>
+            <!-- ////////////////////////////////////////////////////////////////////////////  -->
+             <div class="col-md-12 form-text-style">
+                <div class="col-md-12 margin-element tilte-text-style">Среднее образование</div>
+                <div class="col-md-4 margin-element">Выберете страну:</div>
+                <div class="col-md-8 margin-element">
+                    <select class="input-text-style" 
+                            data-bind="options: countries,
+                                        optionsText: 'name',
+                                        value: countrySelectedMiddleStudy,
+                                        optionsCaption: 'Не выбрано',
+                                        click: cityInitMiddleStudy">
+                    </select>
+                </div>
+                <div class="col-md-4 margin-element">Выберете город:</div>
+                <div class="col-md-8 margin-element">
+                    <select class="input-text-style" 
+                            data-bind="options: cityInitMiddleStudy(),
+                                        value: citySelectedMiddleStudy,
+                                        optionsText: 'name', 
+                                        optionsCaption: 'Не выбрано',
+                                        click: schoolInit">
+                    </select>
+                </div>
+                <div class="col-md-4 margin-element">Выберете школу:</div>
+                <div class="col-md-8 margin-element">
+                    <select class="input-text-style" 
+                            data-bind="options: schoolInit(),
+                                        value: schoolSelected,
+                                        optionsText: 'name', 
+                                        optionsCaption: 'Не выбрано'">
+                    </select>
+                </div>
+            </div> 
+            <!-- ////////////////////////////////////////////////////////////////////////////  -->
+             <div class="col-md-12 form-text-style">
+                <div class="col-md-12 margin-element tilte-text-style">Высшее образование</div>
+                <div class="col-md-4 margin-element">Выберете страну:</div>
+                <div class="col-md-8 margin-element">
+                    <select class="input-text-style" 
+                            data-bind="options: countries,
+                                        optionsText: 'name',
+                                        value: countrySelectedHighStudy,
+                                        optionsCaption: 'Не выбрано',
+                                        click: cityInitHighStudy">
+                    </select>
+                </div>
+                <div class="col-md-4 margin-element">Выберете город:</div>
+                <div class="col-md-8 margin-element">
+                    <select class="input-text-style" 
+                            data-bind="options: cityInitHighStudy(),
+                                        value: citySelectedHighStudy,
+                                        optionsText: 'name', 
+                                        optionsCaption: 'Не выбрано',
+                                        click: unversityInit">
+                    </select>
+                </div>
+                <div class="col-md-4 margin-element">Выберете университет:</div>
+                <div class="col-md-8 margin-element">
+                    <select class="input-text-style" 
+                            data-bind="options: unversityInit(),
+                                        value: univercitySelected,
+                                        optionsText: 'name', 
+                                        optionsCaption: 'Не выбрано'">
+                    </select>
+                </div>
+            </div> 
+            <!-- ////////////////////////////////////////////////////////////////////////////  -->
+            <div class="col-md-12 form-text-style">
+                <div class="col-md-12 margin-element tilte-text-style">Пол</div>                    
+                <div class="col-md-4 margin-element">Пол пользователей:</div>
+                <div class="col-md-8 margin-element">
+                    <select class="input-text-style" 
+                            data-bind="options: gender,
+                                       value: genderSelected">
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12 form-text-style">
+                <div class="col-md-12 margin-element tilte-text-style">Возраст пользователей</div>                    
+                <div class="col-md-4 margin-element">Возраст, нижняя граница:</div>
+                <div class="col-md-8 margin-element">
+                    <input type="text" class="input-text-style" data-bind="value: minAge" placeholder="Введите возраст">
+                </div>
+                <div class="col-md-4 margin-element">Возраст, верхняя граница:</div>
+                <div class="col-md-8 margin-element">
+                    <input type="text" class="input-text-style" data-bind="value: maxAge" placeholder="Введите возраст">
+                </div>
+                <div class="col-md-4 margin-element">Дата рождения:</div>
+                <div class="col-md-8 margin-element">
+                    <input type="date" class="input-text-style" data-bind="value: borndate" placeholder="Выберете дату">
+                </div>
+            </div>
+            <div class="col-md-12 form-text-style">
+                <div class="col-md-12 margin-element tilte-text-style">Работа</div>                    
+                <div class="col-md-4 margin-element">Название компании:</div>
+                <div class="col-md-8 margin-element">
+                    <input type="text" class="input-text-style" data-bind="value: company" placeholder="Введите название компании">
+                </div>
+                <div class="col-md-4 margin-element">Занимаемая должность:</div>
+                <div class="col-md-8 margin-element">
+                    <input type="text" class="input-text-style" data-bind="value: post" placeholder="Введите название должности">
+                </div>
+            </div>
+            <div class="col-md-12 form-text-style">
+                <div class="col-md-12 tilte-text-style">Прочее</div>
+                <div class="col-md-4 margin-element big-text">Идентификатор группы, в которой состоит пользователь:</div>
+                <div class="col-md-8 margin-element big-text">
+                    <input type="text" class="input-text-style" data-bind="value: groupid" placeholder="Введите, идентификатор группы">
+                </div>
+                <div class="col-md-4 margin-element">Выгружать списки пользователей:</div>
+                 <div class="col-md-8 margin-element">
+                    <div class="checkbox">
+                        <label><input type="checkbox" data-bind="checked: listUser"></label>
+                    </div>
+                </div> 
+                <div class="col-md-4 margin-element">Выгружать статистику по объектам пользователя:</div>
+                <div class="col-md-8">
+                    <div class="checkbox">
+                        <label><input type="checkbox" data-bind="checked: statisticUser"></label>
+                    </div>
+                </div> 
+            </div>
+            <div class="col-md-12 form-text-style">
+                <div class="col-md-4 margin-element tilte-text-style">Друзья пользователя:</div>
+                <div class="col-md-8 margin-element">
+                    <select class="input-text-style" 
+                            data-bind="options: choice,
+                                       optionsText: 'name',
+                                       value: friendSelected, 
+                                       click: getfriendForm">
+                    </select>
+                </div>
+                <div data-bind="if: getfriendForm()">
+                    <div class="col-md-12 margin-element form-text-style">                  
+                        <div class="col-md-4 margin-element">Выгружать фото пользователя:</div>
+                        <div class="col-md-8 margin-element checkbox">
+                            <label><input type="checkbox" data-bind="checked: photofriendB"></label>
+                        </div>
+                        <div class="col-md-4 margin-element big-text">Выгружать большое фото пользователя:</div>
+                        <div class="col-md-8 margin-element big-text">
+                            <label><input type="checkbox" data-bind="checked: bigphotofriendB"></label>
+                        </div>
+                        <div class="col-md-4 margin-element big-text">Максимальное количество пользователей:</div>
+                        <div class="col-md-8 margin-element big-text">
+                            <select class="input-text-style" 
+                            data-bind="options: userCount,
+                                       value: userCountFriendSelected">
+                            </select>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+            <div class="col-md-12 form-text-style">
+                <div class="col-md-4 margin-element tilte-text-style">Подписчики пользователя:</div>
+                <div class="col-md-8 margin-element">
+                    <select class="input-text-style" 
+                            data-bind="options: choice,
+                                       optionsText: 'name',
+                                       value: subscriberSelected, 
+                                       click: getsubscriberForm">
+                    </select>
+                </div>
+                <div data-bind="if: getsubscriberForm()">
+                    <div class="col-md-12 margin-element form-text-style">                  
+                        <div class="col-md-4 margin-element">Выгружать фото пользователя:</div>
+                        <div class="col-md-8 margin-element checkbox">
+                            <label><input type="checkbox" data-bind="checked: photosubscriberB"></label>
+                        </div>
+                        <div class="col-md-4 margin-element big-text">Выгружать большое фото пользователя:</div>
+                        <div class="col-md-8 margin-element big-text">
+                            <label><input type="checkbox" data-bind="checked: bigphotosubscriberB"></label>
+                        </div>
+                        <div class="col-md-4 margin-element big-text">Максимальное количество пользователей:</div>
+                        <div class="col-md-8 margin-element big-text">
+                            <select class="input-text-style" 
+                            data-bind="options: userCount,
+                                       value: userCountSubscruberSelected">
+                            </select>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="col-md-12 form-text-style">
+                <div class="col-md-4 margin-element tilte-text-style">Родственники пользователя:</div>
+                <div class="col-md-8 margin-element">
+                    <select class="input-text-style" 
+                            data-bind="options: choice,
+                                       optionsText: 'name',
+                                       value: relativeSelected, 
+                                       click: getrelativeForm">
+                    </select>
+                </div>
+                <div data-bind="if: getrelativeForm()">
+                    <div class="col-md-12 margin-element form-text-style">                  
+                        <div class="col-md-4 margin-element">Выгружать фото пользователя:</div>
+                        <div class="col-md-8 margin-element checkbox">
+                            <label><input type="checkbox" data-bind="checked: photorelativeB"></label>
+                        </div>
+                        <div class="col-md-4 margin-element big-text">Выгружать большое фото пользователя:</div>
+                        <div class="col-md-8 margin-element big-text">
+                            <label><input type="checkbox" data-bind="checked: bigphotorelativeB"></label>
+                        </div>
+                        <div class="col-md-4 margin-element big-text">Максимальное количество пользователей:</div>
+                        <div class="col-md-8 margin-element big-text">
+                            <select class="input-text-style" 
+                            data-bind="options: userCount,
+                                       value: userCountRelativeSelected">
+                            </select>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+             <div class="col-md-12 margin-element text-center">
+                <button class="btn btn-info" data-bind="click : createJSON">
+                    <span class="tilte-text-style">Сформировать JSON запрос</span>
+                </button>
+            </div> 
+        </div>
+    </div>
+</body>
+<script src="lib/knockout.js"></script>
+<script src="app/db.js"></script>
+<script src="app/app.js"></script>
+</html>
