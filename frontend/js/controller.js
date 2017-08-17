@@ -83,13 +83,13 @@
         _public.viewHighLight.table = element.id;
       };
 
-      _public.tableDisHighLight = function(){
-        graphicsService.viewElemDisHighLight();
+      _public.tableDisHighLight = function(element){
+        graphicsService.viewElemDisHighLight(element);
         _public.viewHighLight.button = undefined;
       };
 
-      _public.buttonDisHighLight = function(){
-        graphicsService.viewElemDisHighLight();
+      _public.buttonDisHighLight = function(element){
+        graphicsService.viewElemDisHighLight(element);
         _public.viewHighLight.table = undefined;
       };
     };

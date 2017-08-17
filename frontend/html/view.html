@@ -10,7 +10,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-tr"
                ng-repeat="element in ctrl.OY"
                ng-mousemove="ctrl.tableHighLight(element)"
-               ng-mouseleave="ctrl.tableDisHighLight()">
+               ng-mouseleave="ctrl.tableDisHighLight(element)">
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 table-td">
               <div ng-if="ctrl.HighLightId.table===element.id || ctrl.viewHighLight.table===element.id">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #31b0d5" ng-bind="element.name"></div>
@@ -39,7 +39,7 @@
             <div ng-if="ctrl.HighLightId.button!==element.id && ctrl.viewHighLight.button!==element.id">
               <button class="btn btn-info button-style"
                       ng-mousemove="ctrl.buttonHighLight(element)"
-                      ng-mouseleave="ctrl.buttonDisHighLight()"
+                      ng-mouseleave="ctrl.buttonDisHighLight(element)"
                       ng-bind="element.name"></button>
             </div>
           </div>

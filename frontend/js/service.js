@@ -204,14 +204,16 @@
         _public.canvtools.fill();
       };
 
-      _public.viewElemDisHighLight = function(){
+      _public.viewElemDisHighLight = function(element){
         _public.canvtools.beginPath();
-        for(let item in dataFactory.substance){
-          for(let i=0; i<dataFactory.cycles.length-1; i++){
-            _public.canvtools.fillStyle = _public.graphsParams.graphAreaColor;
-            _public.canvtools.fillRect(_public.graphsParams.indentOXLeft+dataFactory.cycles[i]*_public.koefScaleOX-_public.graphsParams.searchSubNodeSize,
-                                       _public.Height-_public.graphsParams.indentOYBottom-dataFactory.substance[item].data[i]*_public.koefScaleOY-_public.graphsParams.searchSubNodeSize,
-                                       _public.graphsParams.rectHighlightSize, _public.graphsParams.rectHighlightSize);
+        for(let item in dataFactory.substance) {
+          if (element.id === dataFactory.substance[item].id) {
+            for (let i = 0; i < dataFactory.cycles.length - 1; i++) {
+              _public.canvtools.fillStyle = _public.graphsParams.graphAreaColor;
+              _public.canvtools.fillRect(_public.graphsParams.indentOXLeft + dataFactory.cycles[i] * _public.koefScaleOX - _public.graphsParams.searchSubNodeSize,
+                _public.Height - _public.graphsParams.indentOYBottom - dataFactory.substance[item].data[i] * _public.koefScaleOY - _public.graphsParams.searchSubNodeSize,
+                _public.graphsParams.rectHighlightSize, _public.graphsParams.rectHighlightSize);
+            }
           }
         }
         _public.canvtools.fill();
