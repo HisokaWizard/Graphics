@@ -243,7 +243,7 @@
         AxesOYLittleLineLeft : 90,
         AxesOYLittleLineRight : 110,
         searchSubNodeSize: 3,
-        rectHighlightSize : 6
+        rectHighlightSize : 10
       };
 
     };
