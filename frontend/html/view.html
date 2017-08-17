@@ -1,0 +1,59 @@
+<section ng-controller="graphicsCtrl as ctrl">
+  <div class="row main-container">
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 left-container">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-border">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-title-text table-tr table-tr-title">
+          <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 table-td" ng-bind="ctrl.textOnView.substance_name"></div>
+          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 table-td" ng-bind="ctrl.textOnView.Cq"></div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-data">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-tr"
+               ng-repeat="element in ctrl.OY"
+               ng-mousemove="ctrl.tableHighLight(element)"
+               ng-mouseleave="ctrl.tableDisHighLight()">
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 table-td">
+              <div ng-if="ctrl.HighLightId.table===element.id || ctrl.viewHighLight.table===element.id">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #31b0d5" ng-bind="element.name"></div>
+              </div>
+              <div ng-if="ctrl.HighLightId.table!==element.id && ctrl.viewHighLight.table!==element.id">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-bind="element.name"></div>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 table-td">
+              <div ng-if="ctrl.HighLightId.table===element.id || ctrl.viewHighLight.table===element.id">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #31b0d5" ng-bind="ctrl.getCqCycleNumber(element.data)"></div>
+              </div>
+              <div ng-if="ctrl.HighLightId.table!==element.id && ctrl.viewHighLight.table!==element.id">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-bind="ctrl.getCqCycleNumber(element.data)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 list-button">
+        <div ng-repeat="element in ctrl.OY">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 button-elem">
+            <div ng-if="ctrl.HighLightId.button===element.id || ctrl.viewHighLight.button===element.id">
+              <button class="btn btn-info button-style" style="background-color: #31b0d5" ng-bind="element.name"></button>
+            </div>
+            <div ng-if="ctrl.HighLightId.button!==element.id && ctrl.viewHighLight.button!==element.id">
+              <button class="btn btn-info button-style"
+                      ng-mousemove="ctrl.buttonHighLight(element)"
+                      ng-mouseleave="ctrl.buttonDisHighLight()"
+                      ng-bind="element.name"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 right-container">
+      <canvas class="canvas-indent" id="canvas"
+              ng-mousemove="ctrl.OnMouseMove($event)"
+              ng-mousedown="ctrl.MouseDown($event)"
+              ng-mouseup="ctrl.MouseUp($event)"
+              ng-mouseover="ctrl.MouseOver($event)"
+              ng-mouseleave="ctrl.MouseLeave($event)">
+      </canvas>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,86 @@
+.main-container{
+    margin: 0;
+    padding: 0;
+}
+
+.table-title-text{
+    font-family: "Helvetica Neue";
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.button-style {
+    width: 100%;
+    margin: 1px;
+    padding: 10px;
+    background-color: #999999;
+}
+
+.left-container{
+    margin: 20px 0px;
+    border: 2px solid #999999;
+    background-color: #c7ddef;
+    max-height: 900px;
+}
+
+.right-container{
+    margin: 20px 0px;
+    border-top: 2px solid #999999;
+    border-right: 2px solid #999999;
+    border-bottom: 2px solid #999999;
+    background-color: #c7ddef;
+}
+
+.list-button{
+    margin: 0;
+    padding: 0;
+    border-top: 2px solid #999999;
+    max-height: 318px;
+    overflow-y: auto;
+}
+
+.button-elem{
+    margin-top: 2px;
+    margin-bottom: 4px;
+}
+
+.canvas-indent{
+    margin: 20px;
+}
+
+/* таблица своя, т к в bootstrap несколько ограниченная, и долго ее настраивать*/
+.table-border{
+    padding: 0;
+    margin: 20px 20px 20px 5px;
+    border-top: 1px solid #737373;
+    border-left: 1px solid #737373;
+    background: #d5d5d5;
+}
+
+.table-data{
+    min-height: 500px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.table-tr{
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #737373;
+}
+
+.table-tr-title {
+    background: linear-gradient(#c9e2b3, #c7ddef) !important;
+}
+
+.table-tr:hover{
+    background: #31b0d5;
+}
+
+.table-td{
+    padding: 0;
+    margin: 0;
+    border-right: 1px solid #737373;
+}
+/* ////////////////////////////////////////////////////////////////////////////// */
+
